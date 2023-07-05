@@ -45,9 +45,9 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "mustache",
-        "template": "{\n    \"type\": \"message\",\n    \"attachments\": [\n        {\n            \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n            \"contentUrl\": null,\n            \"content\": {\n                \"type\": \"AdaptiveCard\",\n                \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n                \"version\": \"1.5\",\n                \"body\": [\n                    {\n                        \"type\": \"TextBlock\",\n                        \"text\": \"{{flow.title}}\",\n                        \"wrap\": true,\n                        \"style\": \"heading\",\n                        \"size\": \"extraLarge\"\n                    },\n                    {\n                        \"type\": \"TextBlock\",\n                        \"text\": \"クイズが終了しました。\\n\\n優勝者は✨{{flow.rank1}}さん✨です！！\\n\\nおめでとうございます!🎉\",\n                        \"wrap\": true\n                    },\n                    {\n                        \"type\": \"Table\",\n                        \"gridStyle\": \"accent\",\n                        \"firstRowAsHeaders\": true,\n                        \"columns\": [\n                            {\n                                \"width\": 1\n                            },\n                            {\n                                \"width\": 3\n                            },\n                            {\n                                \"width\": 3\n                            }\n                        ],\n                        \"rows\": [\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"順位\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"氏名\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"誤差\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"1👑\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank1}}さん\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank1_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"2\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank2}}さん\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank2_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"3\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank3}}さん\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank3_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ],\n                        \"spacing\": \"Medium\",\n                        \"separator\": true,\n                        \"horizontalAlignment\": \"Center\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "template": "{\n    \"type\": \"message\",\n    \"attachments\": [\n        {\n            \"contentType\": \"application/vnd.microsoft.card.adaptive\",\n            \"contentUrl\": null,\n            \"content\": {\n                \"type\": \"AdaptiveCard\",\n                \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n                \"version\": \"1.5\",\n                \"body\": [\n                    {\n                        \"type\": \"ColumnSet\",\n                        \"columns\": [\n                            {\n                                \"type\": \"Column\",\n                                \"width\": \"auto\",\n                                \"items\": [\n                                    {\n                                        \"type\": \"Image\",\n                                        \"url\": \"https://icon-library.com/images/quiz-icon/quiz-icon-2.jpg\",\n                                        \"size\": \"Medium\"\n                                    }\n                                ]\n                            },\n                            {\n                                \"type\": \"Column\",\n                                \"width\": \"auto\",\n                                \"items\": [\n                                    {\n                                        \"type\": \"TextBlock\",\n                                        \"text\": \"{{flow.title}}\",\n                                        \"wrap\": true,\n                                        \"style\": \"heading\",\n                                        \"size\": \"ExtraLarge\"\n                                    }\n                                ],\n                                \"horizontalAlignment\": \"Center\",\n                                \"verticalContentAlignment\": \"Center\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"TextBlock\",\n                        \"text\": \"クイズが終了しました。\",\n                        \"wrap\": true\n                    },\n                    {\n                        \"type\": \"RichTextBlock\",\n                        \"inlines\": [\n                            {\n                                \"type\": \"TextRun\",\n                                \"text\": \"優勝者は\\n✨ \"\n                            },\n                            {\n                                \"type\": \"TextRun\",\n                                \"text\": \"{{flow.rank1}}\",\n                                \"size\": \"Large\"\n                            },\n                            {\n                                \"type\": \"TextRun\",\n                                \"text\": \" さん✨です！！\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"TextBlock\",\n                        \"text\": \"おめでとうございます!🎉\",\n                        \"wrap\": true\n                    },\n                    {\n                        \"type\": \"Table\",\n                        \"gridStyle\": \"accent\",\n                        \"columns\": [\n                            {\n                                \"width\": 1,\n                                \"horizontalCellContentAlignment\": \"right\"\n                            },\n                            {\n                                \"width\": 3,\n                                \"horizontalCellContentAlignment\": \"center\"\n                            },\n                            {\n                                \"width\": 3,\n                                \"horizontalCellContentAlignment\": \"center\"\n                            }\n                        ],\n                        \"rows\": [\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"順位\",\n                                                \"horizontalAlignment\": \"Center\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"氏名\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"誤差\"\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"style\": \"accent\"\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"👑1\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank1}}さん\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank1_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"style\": \"good\"\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"2\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank2}}さん\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank2_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"style\": \"default\"\n                            },\n                            {\n                                \"type\": \"TableRow\",\n                                \"cells\": [\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"3\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank3}}さん\"\n                                            }\n                                        ]\n                                    },\n                                    {\n                                        \"type\": \"TableCell\",\n                                        \"items\": [\n                                            {\n                                                \"type\": \"TextBlock\",\n                                                \"text\": \"{{flow.rank3_diff}}\",\n                                                \"weight\": \"Bolder\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ],\n                        \"spacing\": \"Medium\",\n                        \"separator\": true,\n                        \"horizontalAlignment\": \"Center\"\n                    }\n                ],\n                \"actions\": [\n                    {\n                        \"type\": \"Action.OpenUrl\",\n                        \"title\": \"URLを開く\",\n                        \"url\": \"https://iot23-group-g.gcp.pgtls.net/ui/\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
         "output": "json",
-        "x": 830,
+        "x": 730,
         "y": 120,
         "wires": [
             [
@@ -65,7 +65,7 @@
                 "t": "set",
                 "p": "title",
                 "pt": "flow",
-                "to": "温湿度クイズ",
+                "to": "Weather Heroes",
                 "tot": "str"
             },
             {
@@ -116,7 +116,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 440,
         "y": 180,
         "wires": [
             [
@@ -132,7 +132,7 @@
         "method": "POST",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "Please fill webhookk url",
+        "url": "Please fill webhook url",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -140,7 +140,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1210,
+        "x": 1050,
         "y": 120,
         "wires": [
             []
@@ -152,7 +152,7 @@
         "z": "9e5ecd4cf9f59b1c",
         "name": "Main flow",
         "info": "Template作成以降がメイン処理\n\n1. link in で必要な情報を受け取る\n2. 受け取った情報を使用してAdaptive cardを作成\n3. Teams投稿する",
-        "x": 540,
+        "x": 340,
         "y": 80,
         "wires": []
     },
@@ -161,12 +161,14 @@
         "type": "link in",
         "z": "9e5ecd4cf9f59b1c",
         "name": "request to teams",
-        "links": [],
-        "x": 545,
+        "links": [
+            "f26ab6621ef13b3b"
+        ],
+        "x": 305,
         "y": 120,
         "wires": [
             [
-                "e94a62b33d37f2a3"
+                "2ac074ec91a3c4bf"
             ]
         ]
     },
@@ -176,7 +178,7 @@
         "z": "9e5ecd4cf9f59b1c",
         "name": "必要な情報",
         "info": "# 各ユーザーの名前と順位\n- rank1\n- rank2\n- rank3\n\n# ユーザーごとの不快指数誤差\n- rank1_diff\n- rank2_diff\n- rank3_diff\n\nlink inからどのように受け付けるか？（もしくはどのように送ってもらうか？）",
-        "x": 760,
+        "x": 660,
         "y": 80,
         "wires": [],
         "icon": "node-red/alert.svg"
@@ -191,5 +193,74 @@
         "y": 140,
         "wires": [],
         "icon": "node-red/debug.svg"
+    },
+    {
+        "id": "2ac074ec91a3c4bf",
+        "type": "change",
+        "z": "9e5ecd4cf9f59b1c",
+        "name": "set values",
+        "rules": [
+            {
+                "t": "set",
+                "p": "title",
+                "pt": "flow",
+                "to": "Weather Heroes",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "rank1",
+                "pt": "flow",
+                "to": "rank1",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "rank2",
+                "pt": "flow",
+                "to": "rank2",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "rank3",
+                "pt": "flow",
+                "to": "rank3",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "rank1_diff",
+                "pt": "flow",
+                "to": "rank1_diff",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "rank2_diff",
+                "pt": "flow",
+                "to": "rank2_diff",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "rank3_diff",
+                "pt": "flow",
+                "to": "rank3_diff",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "e94a62b33d37f2a3"
+            ]
+        ]
     }
 ]
